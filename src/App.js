@@ -1,40 +1,36 @@
 import React from 'react';
-import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import feed from './reducers/feed/feed';
 import Feed from './components/feed/Feed';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 
-const darkTheme = createMuiTheme({
+const useStyles = makeStyles(theme => ({
+    root: {
+      flexGrow: 1,
+    },
+  }));
+  
+
+const theme = createMuiTheme({
   palette: {
     type: 'dark',
   },
 });
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  grid: {
-    background: theme.palette.background.default,
-    color: theme.palette.background.default
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center'
-  },
-}));
-
 function App() {
   const classes = useStyles();
   return (
+    <div className={classes.root}>
     <Provider store = {createStore(feed)}>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Feed />
       </ThemeProvider>
     </Provider>
+    </div>
   );
 }
 
