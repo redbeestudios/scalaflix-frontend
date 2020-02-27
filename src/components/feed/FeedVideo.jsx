@@ -5,21 +5,18 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
-  grid: {
-    background: theme.palette.background.default,
-    color: theme.palette.background.default,
-    wrap:"nowrap"
-  },
-  box: {
+  videoLink: {
     padding: theme.spacing(2),
-    color: theme.palette.background.default,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   title: {
-    textAlign: "center"
+    color: theme.palette.text.primary,
+    textAlign: "left"
   },
   duration: {
-    textAlign: "right"
+    color: theme.palette.text.secondary,
+    textAlign: "left",
+    display: "block"
   },
   img: {
     display: 'block',
@@ -33,20 +30,11 @@ const FeedVideo = ({title, thumbnail, duration}) => {
   const classes = useStyles();
   return (
     <Grid className={classes.grid} item xs="3">
-          <Box pr="2" className={classes.paper}>
-            <Grid container xs spacing="1">
-              <Grid item xs>
-                <Typography className={classes.title} gutterBottom variant="body2">{title}</Typography>
-              </Grid>
-              <Grid item xs="12" justify="center">
-                <img className={classes.img} src={thumbnail}/>
-              </Grid>
-              <Grid item xs>
-                <Typography className={classes.duration}>{duration}</Typography>
-              </Grid>
-            </Grid>
-          </Box>
-            
+      <Grid pr={2} className={classes.videoLink} boxShadow={0}>
+          <img className={classes.img} src={thumbnail}/>
+          <Typography className={classes.title} gutterBottom variant="body2">{title}</Typography>
+          <Typography className={classes.duration} gutterBottom variant="caption">{duration}</Typography>
+      </Grid>      
     </Grid>
   );
 }

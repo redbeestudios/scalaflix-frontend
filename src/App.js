@@ -28,21 +28,19 @@ const theme = createMuiTheme({
 function App() {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
     <Provider store = {createStore(feed)}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Grid container justify="center" className={classes.grid}>
-          <Grid item spacing={2}>
+          <Grid item>
             <Typography gutterBottom variant="h1">Scalaflix</Typography>
           </Grid>
-          <Grid item spacing={2}>
+          <Grid item>
             <Feed />
           </Grid>
         </Grid>
       </ThemeProvider>
     </Provider>
-    </div>
   );
 }
 

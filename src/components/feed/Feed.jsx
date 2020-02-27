@@ -14,11 +14,9 @@ const useStyles = makeStyles(theme => ({
 const Feed = () => {
     const classes = useStyles();
     return (
-        <Grid className={classes.grid} container justify="center">
-            <Grid item xs={12} spacing={2}>
-                <FilterHeader/>
-            </Grid>
-            <Grid item xs={7} spacing={2}>
+        <Grid className={classes.grid} container justify="center" spacing={1}>
+            <FilterHeader/>
+            <Grid item xs={9}>
                 <VideoGridContainer/>
             </Grid>
         </Grid>

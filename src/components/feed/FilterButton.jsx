@@ -17,7 +17,7 @@ const FilterButton = ({
       return (
         <Button className={classes.button}
             variant={active ? "contained" : "outlined"}
-            color="secondary"
+            color="primary"
             onClick={ e => {
                 e.preventDefault();
                 onClick();

@@ -14,9 +14,9 @@ const useStyles = makeStyles(theme => ({
 const FilterHeader = () => {
     const classes = useStyles();
     return (
-        <Grid className={classes.grid} item container justify="center" spacing={2} maxWidth="lg">
-                <FilterButtonContainer filter={MOST_VIEWED}>Most Viewed</FilterButtonContainer>
-                <FilterButtonContainer filter={LEAST_VIEWED}>Least Viewed</FilterButtonContainer>
+        <Grid className={classes.grid} item container justify="center" xs={12}>
+            <FilterButtonContainer filter={MOST_VIEWED}>Most Viewed</FilterButtonContainer>
+            <FilterButtonContainer filter={LEAST_VIEWED}>Least Viewed</FilterButtonContainer>
         </Grid>
     );
 };

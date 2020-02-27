@@ -9,7 +9,6 @@ import React from 'react';
 
     const useStyles = makeStyles(theme => ({
         grid: {
-            background: theme.palette.background.default,
             wrap:"nowrap"
         }
     }));
