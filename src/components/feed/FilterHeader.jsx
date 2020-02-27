@@ -3,15 +3,20 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import FilterButtonContainer from '../../containers/feed/FilterButtonContainer';
 
+import {makeStyles} from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+    grid: {
+      background: theme.palette.background.paper
+    }
+  }));
+
 const FilterHeader = () => {
+    const classes = useStyles();
     return (
-        <Grid container justify="center" spacing={2}>
-            <Grid item xs={5}>
+        <Grid className={classes.grid} item container justify="center" spacing={2} maxWidth="lg">
                 <FilterButtonContainer filter={MOST_VIEWED}>Most Viewed</FilterButtonContainer>
-            </Grid>
-            <Grid item xs={5}> 
                 <FilterButtonContainer filter={LEAST_VIEWED}>Least Viewed</FilterButtonContainer>
-            </Grid>
         </Grid>
     );
 };

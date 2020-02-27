@@ -6,8 +6,13 @@ import { Provider } from 'react-redux';
 import feed from './reducers/feed/feed';
 import Feed from './components/feed/Feed';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
+    grid: {
+      spacing: 1,
+    },
     root: {
       flexGrow: 1,
     },
@@ -27,7 +32,14 @@ function App() {
     <Provider store = {createStore(feed)}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Feed />
+        <Grid container justify="center" className={classes.grid}>
+          <Grid item spacing={2}>
+            <Typography gutterBottom variant="h1">Scalaflix</Typography>
+          </Grid>
+          <Grid item spacing={2}>
+            <Feed />
+          </Grid>
+        </Grid>
       </ThemeProvider>
     </Provider>
     </div>
